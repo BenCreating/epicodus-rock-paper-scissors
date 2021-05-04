@@ -49,4 +49,10 @@ describe '' do
     game = RPS.new
     expect(game.wins?("scissors", "scissors")).to eq(false)
   end
+
+  # Pick a random move
+  it 'returns any move' do
+    game = RPS.new
+    expect(game.random_move).not_to eq(nil)
+  end
 end
