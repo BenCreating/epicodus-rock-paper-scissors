@@ -55,4 +55,25 @@ describe '' do
     game = RPS.new
     expect(game.random_move).not_to eq(nil)
   end
+
+  # Error correction
+  it 'return true because rock is a valid move' do
+    game = RPS.new
+    expect(game.valid?("rock")).to eq(true)
+  end
+
+  it 'return true because paper is a valid move' do
+    game = RPS.new
+    expect(game.valid?("paper")).to eq(true)
+  end
+
+  it 'return true because scissors is a valid move' do
+    game = RPS.new
+    expect(game.valid?("scissors")).to eq(true)
+  end
+
+  it 'return false because spock is not a valid move' do
+    game = RPS.new
+    expect(game.valid?("spock")).to eq(false)
+  end
 end
