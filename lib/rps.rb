@@ -11,6 +11,10 @@ class RPS
     beats_what(object) == argument
   end
 
+  def random_move
+    @move_list.sample
+  end
+
   private
 
     def beats_what(move)
