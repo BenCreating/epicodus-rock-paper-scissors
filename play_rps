@@ -13,6 +13,11 @@ loop do
 
   break if ['exit', 'stop', 'done'].include?(player_move)
 
+  if !game.valid?(player_move)
+    puts "Huh?"
+    next
+  end
+
   if game.wins?(player_move, computer_move)
     puts "#{player_move.capitalize} beats #{computer_move}. You win!"
   elsif game.wins?(computer_move, player_move)
