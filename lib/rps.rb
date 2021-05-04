@@ -1,4 +1,8 @@
 class RPS
+  def initialize()
+    @move_list = ['rock', 'paper', 'scissors']
+  end
+
   def wins?(object, argument)
     # returns true if the object beats the argument
     object = object.downcase
@@ -10,8 +14,7 @@ class RPS
   private
 
     def beats_what(move)
-      move_list = ['rock', 'paper', 'scissors']
-      loser_index = move_list.index(move) - 1
-      move_list[loser_index]
+      loser_index = @move_list.index(move) - 1
+      @move_list[loser_index]
     end
 end
