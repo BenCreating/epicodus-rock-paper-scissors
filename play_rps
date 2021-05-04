@@ -1,1 +1,23 @@
 #!/usr/bin/ruby
+require './lib/rps.rb'
+
+game = RPS.new
+
+player_move = ''
+loop do
+  puts 'What is your move?'
+  puts '("rock", "paper", or "scissors". Type "done" to stop playing.)'
+
+  player_move = gets.chomp.downcase
+  computer_move = game.random_move
+
+  break if ['exit', 'stop', 'done'].include?(player_move)
+
+  if game.wins?(player_move, computer_move)
+    puts "#{player_move.capitalize} beats #{computer_move}. You win!"
+  elsif game.wins?(computer_move, player_move)
+    puts "#{player_move.capitalize} loses to #{computer_move}. You lose."
+  else
+    puts "You both choose #{player_move}! It's a tie!"
+  end
+end
