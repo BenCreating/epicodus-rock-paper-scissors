@@ -15,6 +15,10 @@ class RPS
     @move_list.sample
   end
 
+  def valid?(move)
+    @move_list.include?(move)
+  end
+
   private
 
     def beats_what(move)
